@@ -13,7 +13,9 @@ export class BlogPostService {
   apiBaseUrl = environment.apiBaseUrl;
   // Method to create Blog Post
   createBlogPost(data: AddBlogPostRequest): Observable<BlogPost>{
-    return this.http.post<BlogPost>(`${this.apiBaseUrl}/api/blogposts`, data);
+    return this.http.post<BlogPost>(`${this.apiBaseUrl}/api/blogposts`, data, {
+      withCredentials: true,
+    });
   }
   // Method to fetch all the Blog Posts
   getAllBlogPosts(): HttpResourceRef<BlogPost[] | undefined>{
@@ -23,13 +25,21 @@ export class BlogPostService {
   getBlogPostById(id: InputSignal<string | undefined>): HttpResourceRef<BlogPost | undefined>{
    return httpResource<BlogPost>(() => `${this.apiBaseUrl}/api/blogposts/${id()}`);
   }
+  // Method to fetch Blog Posts by urlHandle
+  getBlogPostsByUrlHandle(urlHandle: InputSignal<string | undefined>): HttpResourceRef<BlogPost | undefined>{
+    return httpResource<BlogPost>(() => `${this.apiBaseUrl}/api/blogPosts/${urlHandle()}`);
+  }
   // Method to fetch Blog Posts by id
   editBlogpost(id: string, body: UpdateBlogPostRequest): Observable<BlogPost> {
-   return this.http.put<BlogPost>('${this.apiBaseUrl}/api/blogposts/${id}', body);
+   return this.http.put<BlogPost>('${this.apiBaseUrl}/api/blogposts/${id}', body, {
+    withCredentials: true,
+   });
   }
   // Method to delete Blog Posts by id
   deleteBlogPost(id: string): Observable<BlogPost>{
-   return this.http.delete<BlogPost>(`${this.apiBaseUrl}/api/blogposts/${id}`);
+   return this.http.delete<BlogPost>(`${this.apiBaseUrl}/api/blogposts/${id}`, {
+    withCredentials: true,
+   });
   }
 
 
