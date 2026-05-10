@@ -1,162 +1,238 @@
-# 🚀 CodePulse – Full Stack Blog Platform
+# CodePulse Blog Platform
 
-CodePulse is a full-stack blog management platform built using **Angular** and **ASP.NET Core Web API**. It allows users to create, manage, and view blog posts and categories through a clean and responsive interface.
+CodePulse is a full-stack blog management platform developed using Angular and ASP.NET Core Web API. The project was built to implement modern frontend and backend development practices including RESTful APIs, JWT authentication, modular architecture, repository pattern, image upload functionality, and protected routes.
 
----
-
-## 📌 Features
-
-### 📝 Blog Management
-
-* Create, update, delete blog posts
-* View list of all blog posts
-* Rich content handling with structured data
-
-### 🏷️ Category Management
-
-* Add and manage categories
-* Assign categories to blog posts
-* Organized content structure
-
-### 🔄 Full CRUD Operations
-
-* RESTful APIs built with ASP.NET Core
-* Integrated frontend with Angular services
+The platform allows administrators to manage blogs and categories securely while providing a separate public interface for users to browse and read blog posts.
 
 ---
 
-## 🏗️ Project Structure
+## Project Overview
 
-```plaintext
-CodePulse/
-├── API2/        # ASP.NET Core Web API (Backend)
-├── UI2/         # Angular Application (Frontend)
-```
+The application is divided into two major parts:
+
+* Frontend developed using Angular
+* Backend developed using ASP.NET Core Web API
+
+The frontend communicates with the backend APIs to perform blog management operations, authentication, category handling, and image uploads.
+
+The project follows a modular and scalable architecture to maintain separation of concerns and improve maintainability.
 
 ---
 
-## ⚙️ Tech Stack
+# Features
 
-### 🔹 Frontend
+## Authentication and Authorization
+
+* JWT-based authentication
+* Secure login and logout functionality
+* Protected admin routes using Angular route guards
+* Authorization-enabled API endpoints
+
+## Blog Management
+
+* Create blog posts
+* Update blog posts
+* Delete blog posts
+* View complete blog details
+* Public blog listing page
+
+## Category Management
+
+* Add categories
+* Edit categories
+* Delete categories
+* Associate categories with blog posts
+
+## Image Upload Functionality
+
+* Upload blog images
+* Image preview before selection
+* Shared reusable image selector component
+
+## Frontend Architecture
+
+* Feature-based Angular structure
+* Shared and reusable components
+* Service-based API communication
+* Route-based navigation
+
+## Backend Architecture
+
+* Repository pattern implementation
+* DTO-based request and response handling
+* Entity Framework Core integration
+* SQL Server database integration
+* Separate authentication database context
+
+---
+
+# Technology Stack
+
+## Frontend
 
 * Angular
 * TypeScript
-* HTML, CSS, Bootstrap
+* HTML
+* CSS
+* RxJS
 
-### 🔹 Backend
+## Backend
 
 * ASP.NET Core Web API
 * Entity Framework Core
 * SQL Server
+* JWT Authentication
+
+## Development Tools
+
+* Git
+* GitHub
+* Visual Studio
+* Visual Studio Code
 
 ---
 
-## 🧠 Key Concepts Used
+# Project Structure
 
-* Clean Architecture (separation of concerns)
-* DTO (Data Transfer Objects)
-* Repository Pattern
-* Dependency Injection
-* REST API Design
-* Reactive Programming (Angular)
-
----
-
-## 🚀 Getting Started
-
-### 🔧 Backend Setup (ASP.NET Core)
-
-1. Navigate to backend folder:
-
-```bash
-cd API2/CodePulse.API
+```bash id="0f8e4v"
+CodePulse/
+│
+├── API2/
+│   └── CodePulse.API/
+│       ├── Controllers/
+│       ├── Data/
+│       ├── Models/
+│       ├── Repositories/
+│       ├── Migrations/
+│       └── Program.cs
+│
+├── UI2/
+│   └── CodePulse/
+│       ├── src/app/core/
+│       ├── src/app/features/
+│       ├── src/app/shared/
+│       └── src/environments/
 ```
 
-2. Run the API:
+---
 
-```bash
+# Key Concepts Implemented
+
+* RESTful API development
+* Repository pattern
+* DTO architecture
+* JWT authentication
+* Angular route guards
+* Dependency injection
+* Entity Framework Core migrations
+* Modular frontend architecture
+* Shared reusable components
+
+---
+
+# Getting Started
+
+## Clone Repository
+
+```bash id="8v7r3m"
+git clone https://github.com/sesadri1/codepulse-blogpost-platform.git
+```
+
+---
+
+# Backend Setup
+
+## Navigate to backend project
+
+```bash id="i9x1wr"
+cd API2/CodePulse.API/CodePulse.API
+```
+
+## Restore dependencies
+
+```bash id="zt3qg1"
+dotnet restore
+```
+
+## Apply database migrations
+
+```bash id="gr7e1f"
+dotnet ef database update
+```
+
+## Run backend server
+
+```bash id="f0g5lw"
 dotnet run
 ```
 
-3. API will start on:
+---
 
+# Frontend Setup
+
+## Navigate to frontend project
+
+```bash id="n6y4pk"
+cd UI2/CodePulse
 ```
+
+## Install dependencies
+
+```bash id="3v0x2d"
+npm install
+```
+
+## Run Angular application
+
+```bash id="j4e8mt"
+ng serve
+```
+
+---
+
+# Application URLs
+
+## Frontend
+
+```plaintext id="9m1e4q"
+http://localhost:4200
+```
+
+## Backend API
+
+```plaintext id="1p4k8v"
 https://localhost:xxxx
 ```
 
 ---
 
-### 💻 Frontend Setup (Angular)
+# Current Improvements in Progress
 
-1. Navigate to frontend folder:
-
-```bash
-cd UI2/CodePulse
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Run Angular app:
-
-```bash
-ng serve
-```
-
-4. Open in browser:
-
-```
-http://localhost:4200
-```
+* Enhanced UI styling and responsiveness
+* Blog "Read More" navigation improvements
+* Additional frontend optimizations
 
 ---
 
-## 🔗 API Endpoints (Sample)
+# Planned Enhancements
 
-| Method | Endpoint            | Description        |
-| ------ | ------------------- | ------------------ |
-| GET    | /api/blogposts      | Get all blog posts |
-| POST   | /api/blogposts      | Create blog post   |
-| PUT    | /api/blogposts/{id} | Update blog post   |
-| DELETE | /api/blogposts/{id} | Delete blog post   |
-
----
-
-## 📸 Screenshots
-
-*(Add screenshots here after running the project)*
+* Pagination and filtering
+* Search functionality
+* Rich text editor integration
+* Role-based authorization
+* Comment system
+* Cloud deployment
 
 ---
 
-## 📈 Future Improvements
+# Author
 
-* Authentication & Authorization (JWT)
-* Rich text editor for blog content
-* Image upload support
-* Pagination & filtering
-* Deployment (Azure / Vercel)
+## Sesadri Nayak
 
----
+Aspiring Full Stack Developer with a focus on:
 
-## 👨‍💻 Author
-
-**Sesadri Nayak**
-
-* GitHub: https://github.com/sesadri1
-
----
-
-## ⭐ Acknowledgements
-
-This project was built as part of full-stack development practice to strengthen skills in Angular and ASP.NET Core.
-
----
-
-## 📬 Feedback
-
-If you have suggestions or feedback, feel free to open an issue or connect with me!
-
----
+* Angular
+* ASP.NET Core
+* REST APIs
+* Full Stack Web Development
+* Scalable application architecture
