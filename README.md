@@ -126,7 +126,41 @@ http://localhost:4200
 ---
 
 ## 📸 Screenshots
+# Application Screenshots
 
+## Home Page
+
+![Home Page](./screenshots/home-page.png)
+
+---
+
+## Login Page
+
+![Login Page](./screenshots/login-page.png)
+
+---
+
+## Blog Details Page
+
+![Blog Details](./screenshots/blogpost-list-page.png)
+
+---
+
+## Add BlogPost Page
+
+![Add BlogPost](./screenshots/add-blogpost-page.png)
+
+---
+
+## Image Upload Preview
+
+![Image Upload](./screenshots/image-upload-preview.png)
+
+---
+
+## Swagger API Overview
+
+![Swagger API](./screenshots/swagger-overview1.png)
 *(Add screenshots here after running the project)*
 
 ---
